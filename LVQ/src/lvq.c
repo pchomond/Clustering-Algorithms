@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			  GLOBALS			  */
+/*	       GLOBALS 	  	  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 point_t dataset[500]; 		// The array that holds the dataset
@@ -14,12 +14,12 @@ float min_dispersion = INFINITY;// The least dispersion found
 int min_simulation; 		// The simulation with the least dispersion
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			 FUNCTIONS			  */
+/*	       FUNCTIONS 	  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/* @seed: Creates a dataset.txt file with 500 two-dimensional points.	*/
-/*		  Feel free to comment out the call to this function in 		*/
-/*		  lvq_main to maintain the dataset for more than one run. 		*/
+/* @seed: Creates a dataset.txt file with 500 two-dimensional points.		*/
+/*		  Feel free to comment out the call to this function in 	*/
+/*		  lvq_main to maintain the dataset for more than one run. 	*/
 void seed()
 {
 	FILE *fp;
@@ -87,7 +87,7 @@ void dataset_processing()
 }
 
 /* @init: Selects m random points from the dataset	*/
-/*		  to act as initial centroids				*/
+/*		  to act as initial centroids		*/
 void init()
 {
 	int i, n;
@@ -110,7 +110,7 @@ void init()
 }
 
 /* @euclidean_distance: Calculates the euclidean distance between	*/
-/*						a dataset point and a centroid.				*/
+/*			a dataset point and a centroid.			*/
 float euclidean_distance(int i, int j, int simulation)
 {
 	return sqrtf(powf(dataset[i].x - centroid_tails[simulation][j]->x, 2) +
@@ -173,7 +173,7 @@ void lvq()
 			centroid->next = NULL;
 
 			/* Add the new centroid at the end of the linked list of centroids	*/
-			/* for the particular cluster <closest_cluster>						*/
+			/* for the particular cluster <closest_cluster>				*/
 			centroid_tails[num_of_sim][closest_cluster]->next = centroid;
 			centroid_tails[num_of_sim][closest_cluster] = centroid;
 		}
@@ -184,7 +184,7 @@ void lvq()
 }
 
 /* @calculate_dispersion: Computes the dispersion of a cluster as the sum of the squares	*/
-/*						  of the differences between the cluster points and the centroid	*/
+/*			  of the differences between the cluster points and the centroid	*/
 void calculate_dispersion()
 {
 	int i;
