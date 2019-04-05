@@ -5,14 +5,14 @@
 #include <unistd.h>
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			  DEFINES			  */
+/*	       DEFINES		  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 #define SIMULATIONS 5
 #define CLUSTERS	5
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			  STRUCTS			  */
+/*	       STRUCTS		  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 typedef struct Point
@@ -32,7 +32,7 @@ typedef struct Cluster
 }cluster_t;
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			  GLOBALS			  */
+/*	       GLOBALS		  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 extern point_t dataset[];
@@ -42,7 +42,7 @@ extern int min_simulation;
 extern int min_sim_recalc;
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			 FUNCTIONS			  */
+/*	      FUNCTIONS		  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 int kmeans_main();
