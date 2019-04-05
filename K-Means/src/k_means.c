@@ -2,24 +2,24 @@
 #include <time.h>
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			  GLOBALS			  */
+/*	       GLOBALS		  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-point_t dataset[500]; // The array that holds the dataset
-cluster_t **centroid; // The 2D array where all the centroid values are stored
-int num_of_recalculations = 0; // Number of times the current simulation had to recalculate the centroids
-int num_of_sim; // The number of the current simulation
-float min_dispersion = INFINITY; // The least dispersion found
-int min_simulation; // The number of the simulation with the least dispersion
-int min_sim_recalc; // The number of recalculations the <min_simulation> had to perform
+point_t dataset[500]; 		// The array that holds the dataset
+cluster_t **centroid; 		// The 2D array where all the centroid values are stored
+int num_of_recalculations = 0; 	// Number of times the current simulation had to recalculate the centroids
+int num_of_sim; 		// The number of the current simulation
+float min_dispersion = INFINITY;// The least dispersion found
+int min_simulation; 		// The number of the simulation with the least dispersion
+int min_sim_recalc; 		// The number of recalculations the <min_simulation> had to perform
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			 FUNCTIONS			  */
+/*	       FUNCTIONS	  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/* @seed: Creates a dataset.txt file with 500 two-dimensional points.	*/
-/*		  Feel free to comment out the call to this function in 		*/
-/*		  kmeans_main to maintain the dataset for more than one run. 		*/
+/* @seed: Creates a dataset.txt file with 500 two-dimensional points.		*/
+/*		  Feel free to comment out the call to this function in 	*/
+/*		  kmeans_main to maintain the dataset for more than one run. 	*/
 void seed()
 {
 	FILE *fp;
@@ -87,7 +87,7 @@ void dataset_processing()
 }
 
 /* @init: Selects m random points from the dataset	*/
-/*		  to act as initial centroids				*/
+/*	  to act as initial centroids			*/
 void init()
 {
 	int i, n;
@@ -106,8 +106,8 @@ void init()
 }
 
 /* @recalculate_centroids: Finds the mean coordinates of all the points belonging   */
-/*						   to each cluster and assigns the new centroid coordinates */
-/*						   of said cluster.											*/	
+/*			   to each cluster and assigns the new centroid coordinates */
+/*			   of said cluster.					    */	
 void recalculate_centroids()
 {
 	int i, j, cluster_size;
@@ -139,7 +139,7 @@ void recalculate_centroids()
 }
 
 /* @check_centroids: Checks if the centroids have moved in the last two recalculations	*/
-/*					 Returns 1 (True) = "Moved" or 0 (False) = "Not moved"				*/
+/*		     Returns 1 (True) = "Moved" or 0 (False) = "Not moved"		*/
 int check_centroids()
 {
 	int i;
@@ -161,7 +161,7 @@ int check_centroids()
 }
 
 /* @euclidean_distance: Calculates the euclidean distance between	*/
-/*						a dataset point and a centroid.				*/
+/*			a dataset point and a centroid.			*/
 float euclidean_distance(int i, int j)
 {
 	return sqrtf(powf(dataset[i].x - centroid[num_of_sim][num_of_recalculations * CLUSTERS + j].x, 2) +
@@ -207,7 +207,7 @@ void k_means()
 }
 
 /* @calculate_dispersion: Computes the dispersion of a cluster as the sum of squares of	*/
-/*						  the differences between the cluster points and the centroid	*/
+/*			  the differences between the cluster points and the centroid	*/
 void calculate_dispersion()
 {
 	int i;
@@ -227,9 +227,9 @@ void calculate_dispersion()
 	printf("Recalculations of Simulation %d: %d.\n", num_of_sim, num_of_recalculations);
 }
 
-/* @kmeans_main: Executes the k-means algorithm <SIMULATIONS> times and stores the run with */
-/*				 the least dispersion. At the end, adjusts the dataset points to show the	*/
-/*				 correct cluster assignment.												*/	
+/* @kmeans_main: Executes the k-means algorithm <SIMULATIONS> times and stores the run with 	*/
+/*		  the least dispersion. At the end, adjusts the dataset points to show the	*/
+/*		  correct cluster assignment.							*/	
 int kmeans_main()
 {
 	int i;
@@ -257,8 +257,8 @@ int kmeans_main()
 	}
 
 	/* The final simulation leaves the dataset points assigned to some clusters based on the centroids	*/
-	/* found on THAT simulation. In order to project the dataset points assigned to the correct cluster,*/
-	/* we reassign them based on the centroids found in the simulation with the	least dispersion.		*/
+	/* found on THAT simulation. In order to project the dataset points assigned to the correct cluster,	*/
+	/* we reassign them based on the centroids found in the simulation with the	least dispersion.	*/
 	num_of_sim = min_simulation;
 	num_of_recalculations = min_sim_recalc;
 	assign_points();
