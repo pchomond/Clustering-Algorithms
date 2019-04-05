@@ -4,14 +4,14 @@
 #include <math.h>
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			  DEFINES			  */
+/*	      DEFINES	 	  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 #define CLUSTERS 5
 #define SIMULATIONS 5
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			  STRUCTS			  */
+/*	      STRUCTS	 	  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 typedef struct Point
@@ -32,7 +32,7 @@ typedef struct Cluster
 }cluster_t;
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			  GLOBALS			  */
+/*	       GLOBALS	 	  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 extern point_t dataset[];
@@ -43,7 +43,7 @@ extern float min_dispersion;
 extern int min_simulation;
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*			 FUNCTIONS			  */
+/*	      FUNCTIONS	 	  */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 void lvq_main();
