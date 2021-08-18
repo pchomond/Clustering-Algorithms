@@ -5,7 +5,7 @@ Grouping of a dataset in clusters. Dataset consists of 500 two-dimensional point
 Part of the course "Computational Intelligence-MYE035"/Winter semester of 2018-2019 season at [University of Ioannina](http://cs.uoi.gr/en/index.php?menu=m1).
 
 ### Implementation by:
-1. Homondozlis Paschalis
+1. Chomondozlis Paschalis
 2. [Deligiannis Nikos](https://github.com/NikosDelijohn)
 
 ## K-Means
