@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Pashalis"
+  given-names: "Homondozlis"
+- family-names: "Nikolaos"
+  given-names: "Deligiannis"
+title: "Implementation and Visualization of K-Means and LearningVectorQuantization (LVQ) Algorithms"
+version: 1.0
+date-released: 2019-4-5
+url: "https://github.com/pchomond/Clustering-Algorithms"
